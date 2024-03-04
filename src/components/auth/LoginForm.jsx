@@ -10,14 +10,12 @@ const LoginForm = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log("Login button clicked");
         if (validateForm()) {
             try {
                 const res = await fetch(`http://localhost:8000/data`);
                 const data = await res.json();
                 const foundUser = data.find(user => user.email === email && user.password === password);
                 if (foundUser) {
-                    console.log("Login successful");
                     navigate('/');
                 } else {
                     alert("Please Enter Correct Email and Password");

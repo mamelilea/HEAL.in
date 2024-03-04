@@ -11,7 +11,7 @@ function router() {
     return (
         <Router>
             <Routes>
-                <Route path='/' element={<Home />} exact />
+                <Route path='/' element={<Home />} exact />``
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/register' element={<RegisterPage />} />
             </Routes>
