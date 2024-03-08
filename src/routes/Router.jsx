@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PrivateRoutes from '../components/routes/PrivateRoute'
 
 // pages
 import AuthPage from '../pages/AuthPage';
