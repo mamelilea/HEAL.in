@@ -12,11 +12,6 @@ const Input = ({
 }) => {
     return (
         <div className='flex justify-between gap-2 flex-col my-5'>
-            <label
-                htmlFor={name}
-            >
-                {label}
-            </label>
             <input
                 type={type}
                 name={name}

@@ -1,28 +1,10 @@
 {
   "data": [
     {
-      "id": "5d4e",
-      "email": "achmalpradipta@student.ub.ac.id",
-      "password": "123"
-    },
-    {
-      "id": "6e26",
-      "email": "zidanereza@student.ub.ac.id",
-      "password": "123"
-    },
-    {
-      "id": "0b5c",
-      "email": "achmalpradipta@student.ub.ac.id",
-      "password": "123"
-    },
-    {
-      "id": "7418",
-      "email": "achmalpradipta@student.ub.ac.id",
-      "password": "123"
-    },
-    {
-      "id": "1ac6",
-      "email": "dhani@student.ub.ac.id",
+      "id": "ee40",
+      "frontName": "jamal",
+      "lastName": "ibnu",
+      "email": "achmalpradiptaaditama@gmail.com",
       "password": "123"
     }
   ]
