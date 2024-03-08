@@ -98,7 +98,7 @@ const AuthForm = () => {
 
             {/* section kanan */}
             <section className='lg:w-1/2 lg:h-max flex flex-col items-center '>
-                <div className={`${isLogIn ? "mt-[-10rem]" : "-mt-0"}`}>
+                <div className={`${isLogIn ? "mt-[-10rem]" : "-mt-0"} px-2`}>
                     <div className='my-5'>
                         <img src={Logo} alt="" className='w-[8rem]' />
                     </div>
@@ -112,7 +112,7 @@ const AuthForm = () => {
                 {isLogIn ? (
                     // Form untuk Login
                     <div>
-                        <form onSubmit={handleLogin} className='w-[24rem] '>
+                        <form onSubmit={handleLogin} className='w-[24rem] px-2'>
                             <div className="label-text text-base -mb-3">
                                 Email <span className='text-red-500'>*</span>
                             </div>
@@ -149,7 +149,7 @@ const AuthForm = () => {
                 ) : (
                     // Form untuk Sign Up
                     <div>
-                        <form onSubmit={handleSignUp} className='w-[24rem] overflow-x-hidden'>
+                        <form onSubmit={handleSignUp} className='w-[24rem] px-2'>
                             <div className='flex gap-3'>
                                 <div className='w-1/2'>
                                     <div className="label-text text-base -mb-3">
