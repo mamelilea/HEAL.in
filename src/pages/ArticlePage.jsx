@@ -1,6 +1,7 @@
 import React from 'react'
 import ArticleCard from '../components/article/ArticleCard'
 import Navbar from '../components/shared/Navbar'
+import TemplatePage from '../components/layout/TemplatePage'
 
 const ArticlePage = () => {
   const articles = [
@@ -25,17 +26,17 @@ const ArticlePage = () => {
   ]
   return (
     <>
-    <Navbar />
-    <div className=' w-screen flex justify-center'>
-      <div className='bg-slate-200 p-20 w-[80%] min-h-screen'>
-        <h1 className='text-4xl font-semibold'>Article</h1>
-        <section className='my-16 flex flex-col gap-4'>
-          {articles.map(article => (
-            <ArticleCard key={article.id} id={article.id} img={article.img} title={article.title} text={article.text} />
-          ))}
-        </section>
+      <div className=' w-screen flex flex-col justify-center items-center'>
+        <Navbar />
+        <TemplatePage title={'Article'}/>
+        <div className='bg-slate-200 p-20 w-[80%] min-h-screen'>
+          <section className='my-16 flex flex-col gap-4'>
+            {articles.map(article => (
+              <ArticleCard key={article.id} id={article.id} img={article.img} title={article.title} text={article.text} />
+            ))}
+          </section>
+        </div>
       </div>
-    </div>
     </>
   )
 }

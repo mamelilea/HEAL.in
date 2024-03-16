@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'plus-jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+    },
   },
   plugins: [require("daisyui")],
 }

@@ -13,7 +13,7 @@ const Button = (
         <button
         type={type}
         onClick={onClick}
-        className={className}
+        className={`${className} hover:cursor-pointer`}
         disabled={disabled}
         >
             {children}

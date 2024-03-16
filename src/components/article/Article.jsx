@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from '../shared/Navbar';
 import ErrorPage from '../../pages/ErrorPage';
@@ -20,7 +20,6 @@ const ArticleDetail = () => {
 
     }
     const { title, img, text } = article;
-    const [value, setValue] = useState('');
 
     return (
         <>

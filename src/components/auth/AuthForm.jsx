@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Input from '../ui/Input'
 import { useNavigate } from 'react-router-dom';
 import Button from '../ui/Button';
-import Logo from '../../assets/Logo.png';
+import Logo from '../../assets/Logo1.png';
 import Carousel from '../ui/Carousel';
 
 const AuthForm = () => {
@@ -74,6 +74,21 @@ const AuthForm = () => {
                 alert("Nama belakang harus diisi");
                 return false;
             }
+            if (password !== confirmPassword) {
+                alert("Password harus sama");
+                return false;
+            }
+            if (email === "" || email === null) {
+                alert("gunakan email yang valid");
+                return false;
+            }
+            if (password === "" || password === null) {
+                return false;
+            }
+            if (password.length < 8) {
+                alert("password minimal 8 karakter");
+                return false;
+            }
         }
         return true;
     }
@@ -89,22 +104,22 @@ const AuthForm = () => {
         setIsLogIn(true);
     };
 
-    return (
-        <div className='w-[95vw] h-max flex items-center justify-center overflow-x-hidden py-10 px-4'>
+    return ( 
+        <div className='w-[95vw] h-max flex items-center justify-center overflow-x-hidden py-10 px-4 font-plus-jakarta'>
             {/* section kiri */}
-            <section className='lg:w-1/2 lg:h-max flex items-center justify-center overflow-x-hidden'>
+            <section className='lg:w-1/2 lg:h-max flex items-center justify-center overflow-hidden'>
                 <Carousel />
             </section>
 
             {/* section kanan */}
             <section className='lg:w-1/2 lg:h-max flex flex-col items-center '>
-                <div className={`${isLogIn ? "mt-[-10rem]" : "-mt-0"} px-2`}>
+                <div className={`${isLogIn ? "mt-[-5rem]" : "-mt-0"} px-2`}>
                     <div className='my-5'>
                         <img src={Logo} alt="" className='w-[8rem]' />
                     </div>
-                    <div className="join w-[24rem] p-1 pr-1 bg-[#f2f2f2] gap-2 rounded-xl mb-10 group">
-                        <input className={`rounded-xl btn w-1/2 ${isLogIn ? 'bg-slate-500' : ''}`} type="checkbox" name="options" aria-label="Log In" checked={isLogIn} value="Log In" onChange={toggleMode} />
-                        <input className={`rounded-xl btn w-1/2 ${isLogIn ? '' : 'bg-blue-500'}`} type="checkbox" name="options" aria-label="Sign Up" checked={!isLogIn} value="Sign Up" onChange={toggleMode} />
+                    <div className="join box-border pr-5 w-[24rem] p-1 bg-[#f2f2f2] gap-2 rounded-xl mb-10 group">
+                        <input className={`rounded-xl btn w-1/2`} style={{ backgroundColor: isLogIn ? '#4299e1 ' : '', color: isLogIn ? '#FFF' : '#9C9AA5' }} type="checkbox" name="options" aria-label="Log In" checked={isLogIn} value="Log In" onChange={toggleMode} />
+                        <input className={`rounded-xl btn w-1/2`} style={{ backgroundColor: isLogIn ? '' : '#4299e1', color: isLogIn ? '#9C9AA5' : '#FFF' }} type="checkbox" name="options" aria-label="Sign Up" checked={!isLogIn} value="Sign Up" onChange={toggleMode} />
                     </div>
                 </div>
 
@@ -112,7 +127,7 @@ const AuthForm = () => {
                 {isLogIn ? (
                     // Form untuk Login
                     <div>
-                        <form onSubmit={handleLogin} className='w-[24rem] px-2'>
+                        <form onSubmit={handleLogin} className='w-[23rem] box-border flex flex-col items-start  -ml-4'>
                             <div className="label-text text-base -mb-3">
                                 Email <span className='text-red-500'>*</span>
                             </div>
@@ -123,7 +138,7 @@ const AuthForm = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email@gmail.com"
-                                className={"input input-bordered w-full"}
+                                className={"input input-bordered w-[22rem]"}
                             />
                             <div className="label-text text-base -mb-3">
                                 Password <span className='text-red-500'>*</span>
@@ -135,12 +150,12 @@ const AuthForm = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Password"
-                                className={"input input-bordered w-full"}
+                                className={"input input-bordered w-[22rem]"}
                             />
                             <Button
                                 type={"submit"}
                                 children={"Login"}
-                                className={"btn btn-active w-full mt-5 bg-blue-500 text-white"}
+                                className={"btn btn-active w-[24rem] mt-5 bg-blue-500 text-white hover:bg-blue-800 hover:shadow-inner"}
                                 disabled={false}
                             />
 
@@ -149,8 +164,8 @@ const AuthForm = () => {
                 ) : (
                     // Form untuk Sign Up
                     <div>
-                        <form onSubmit={handleSignUp} className='w-[24rem] px-2'>
-                            <div className='flex gap-3'>
+                        <form onSubmit={handleSignUp} className='w-[23rem] box-border  flex flex-col items-start -ml-4'>
+                            <div className='flex gap-10 w-[22rem]'>
                                 <div className='w-1/2'>
                                     <div className="label-text text-base -mb-3">
                                         Front Name <span className='text-red-500'>*</span>
@@ -189,7 +204,7 @@ const AuthForm = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email@gmail.com"
-                                className={"input input-bordered w-full"}
+                                className={"input input-bordered w-[22rem]"}
                             />
                             <div className="label-text text-base -mb-3">
                                 Password <span className='text-red-500'>*</span>
@@ -201,7 +216,7 @@ const AuthForm = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Password"
-                                className={"input input-bordered w-full"}
+                                className={"input input-bordered w-[22rem]"}
                             />
                             <div className="label-text text-base -mb-3">
                                 Confirm Password <span className='text-red-500'>*</span>
@@ -213,12 +228,12 @@ const AuthForm = () => {
                                 value={confirmPassword}
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                                 placeholder="Confirm Password"
-                                className={"input input-bordered w-full"}
+                                className={"input input-bordered w-[22rem]"}
                             />
                             <Button
                                 type={"submit"}
                                 children={"Create Account"}
-                                className={"btn btn-active w-full mt-5 bg-blue-500 text-white"}
+                                className={"btn btn-active w-[24rem] mt-5 bg-blue-500 text-white hover:bg-blue-800 hover:shadow-inner"}
                                 disabled={false}
                             />
 
@@ -235,9 +250,9 @@ const AuthForm = () => {
                             "Already have an account? "
                         )}
                         {isLogIn ? (
-                            <span onClick={handleSignUpLinkClick} style={{ cursor: 'pointer' }}> SignUp</span>
+                            <span onClick={handleSignUpLinkClick} style={{ cursor: 'pointer' }}> Sign Up</span>
                         ) : (
-                            <span onClick={handleLoginLinkClick} style={{ cursor: 'pointer' }}> Login</span>
+                            <span onClick={handleLoginLinkClick} style={{ cursor: 'pointer' }}> Log In</span>
                         )}
                     </p>
                 </section>
