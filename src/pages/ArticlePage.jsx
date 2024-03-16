@@ -26,9 +26,9 @@ const ArticlePage = () => {
   ]
   return (
     <>
-      <div className=' w-screen flex flex-col justify-center items-center'>
+      <div className='flex flex-col justify-center items-center'>
         <Navbar />
-        <TemplatePage title={'Article'}/>
+        <TemplatePage title={'Article'} />
         <div className='bg-slate-200 p-20 w-[80%] min-h-screen'>
           <section className='my-16 flex flex-col gap-4'>
             {articles.map(article => (

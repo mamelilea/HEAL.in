@@ -22,6 +22,7 @@ function router() {
                 <Route path='/event' element={<Event />} />
                 <Route path='/journaling' element={<Journaling />} />
                 <Route path='/breath' element={<Breath />} />
+                <Route path='/about' element={<LandingPage initialScrollToId="#about"/>}/>
                 <Route path='/article' element={<ArticlePage />} />
                 <Route path='/article/:id' element={<ArticleDetail />} />
                 <Route path='*' element={<ErrorPage />} />

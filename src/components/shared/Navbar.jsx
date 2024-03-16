@@ -24,7 +24,7 @@ const Navbar = () => {
     }, [location.pathname]);
 
 
-    const navClass = scrollNav ? 'bg-white' : '';
+    const navClass = scrollNav ? 'bg-white w-[101vw]' : '';
     return (
         <div className={`w-screen flex justify-around fixed top-0 z-50 items-center text-blue-500 ${navClass}`}>
             <div>
@@ -33,7 +33,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className='font-plus-jakarta flex gap-10 items-center'>
-                <a href="#about" className='no-underline text-blue-500'>About</a>
+                <Link to={"/about"} className='no-underline text-blue-500'>About</Link>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="hover:cursor-pointer">Services</div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-white rounded-box w-52">

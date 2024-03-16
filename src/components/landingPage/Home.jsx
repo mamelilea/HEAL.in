@@ -8,7 +8,7 @@ const Home = () => {
             <div>
                 <img src={BackgroundImg} alt="" className='w-full relative' />
             </div>
-            <div className='font-plus-jakarta font-semibold absolute right-[4rem] leading-tight top-[29rem] text-zinc-700 text-7xl text-end'>
+            <div className='font-plus-jakarta font-semibold absolute right-[4rem] leading-tight top-[29.5rem] text-zinc-700 text-7xl text-end'>
                 Unite for <br /> Mental Health
             </div>
         </div>

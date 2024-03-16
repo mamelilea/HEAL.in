@@ -14,17 +14,17 @@ import Testimoni from '../components/landingPage/Testimoni'
 const LandingPage = () => {
   return (
     <>
-      <div className='flex flex-col items-center w-screen'>
+      <div className='flex flex-col items-center w-[97.9vw] ml-1'>
         <Navbar />
         <Home />
         <About />
         <Journaling />
         <Breath />
-        <VideoPodcast/>
+        <VideoPodcast />
         <Event />
         <Article />
         <Testimoni />
-        <Footer/>
+        <Footer />
       </div>
     </>
   )

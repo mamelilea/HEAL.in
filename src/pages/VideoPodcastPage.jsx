@@ -4,7 +4,7 @@ import TemplatePage from '../components/layout/TemplatePage'
 
 const VideoPodcastPage = () => {
     return (
-        <div className='w-screen flex flex-col items-center'>
+        <div className='flex flex-col items-center'>
             <Navbar />
             <TemplatePage title={'Video & Podcast'} />
         </div>
