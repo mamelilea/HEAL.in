@@ -1,0 +1,63 @@
+body {
+  font-family: "Maven Pro", sans-serif;
+  align-items: center;
+  display: flex;
+}
+
+h1 {
+  margin: auto;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+h1 a:hover {
+  color: #259ef5;
+}
+
+h1 a::before,
+h1 a::after,
+h1 span::before,
+h1 span::after {
+  content: "";
+  position: absolute;
+  background: #259ef5;
+  transition: all 4s ease-in;
+}
+
+h1 a::before,
+h1 a::after {
+  height: 2px;
+  width: 0;
+}
+
+h1 a::before {
+  bottom: 0;
+}
+
+h1 a::after {
+  right: 0;
+}
+
+h1 a:hover::after,
+h1 a:hover::before {
+  width: 100%;
+}
+
+h1 span::before,
+h1 span::after {
+  width: 2px;
+  height: 0;
+}
+
+h1 span::before {
+  bottom: 0;
+}
+
+h1 span:hover::before,
+h1 span:hover::after {
+  height: 100%;
+}

@@ -41,16 +41,16 @@ const Journaling = () => {
                         {/* Isi card */}
                         <div className="flex-col justify-start items-start flex p-3">
                             <div className="justify-start items-start inline-flex">
-                                <div className={`w-10 h-10 bg-neutral-700 hover:bg-white rounded-full flex items-center justify-center`}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={"white"} className="w-6 h-6 hover:stroke-black">
+                                <div className={`w-10 h-10 bg-neutral-700  rounded-full flex items-center justify-center`}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={"white"} className="w-6 h-6 ">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
                                     </svg>
                                 </div>
                                 <div className="w-6 h-6 relative" />
                             </div>
                             <div className="flex-col justify-start items-start flex mt-2">
-                                <div className={`text-black hover:text-white text-base font-semibold`}>Journaling</div>
-                                <div className={`w-full h-16 text-justify text-[.65rem] font-normal text-black hover:text-white leading-snug`}>Fitur journaling memberikan ruang yang aman dan pribadi bagi Anda untuk mengekspresikan perasaan dan pikiran mereka tanpa takut dinilai atau dihakimi</div>
+                                <div className={`text-black text-base font-semibold`}>Journaling</div>
+                                <div className={`w-full h-16 text-justify text-[.65rem] font-normal text-black  leading-snug`}>Fitur journaling memberikan ruang yang aman dan pribadi bagi Anda untuk mengekspresikan perasaan dan pikiran mereka tanpa takut dinilai atau dihakimi</div>
                             </div>
                         </div>
                     </div>
@@ -58,8 +58,8 @@ const Journaling = () => {
                     <div className={`w-1/3 h-[11rem] bg-white hover:bg-blue-500  hover:cursor-pointer rounded-xl flex-col justify-start items-start inline-flex`}>
                         <div className="flex-col justify-start items-start flex p-3">
                             <div className="justify-start items-start inline-flex">
-                                <div className={`w-10 h-10 bg-neutral-700 hover:bg-white rounded-full flex items-center justify-center`}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={"white"} className="w-6 h-6 hover:stroke-black">
+                                <div className={`w-10 h-10 bg-neutral-700  rounded-full flex items-center justify-center`}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={"white"} className="w-6 h-6 ">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
                                     </svg>
 
@@ -67,8 +67,8 @@ const Journaling = () => {
                                 <div className=" relative" />
                             </div>
                             <div className="flex-col justify-start items-start flex mt-2">
-                                <div className={`text-black hover:text-white text-base font-semibold`}>Mood Tracker</div>
-                                <div className={`w-full h-16 text-justify text-[.65rem] font-normal text-black hover:text-white leading-snug`}>Fitur mood tracker membantu untuk memantau perubahan suasana hati Anda</div>
+                                <div className={`text-black  text-base font-semibold`}>Mood Tracker</div>
+                                <div className={`w-full h-16 text-justify text-[.65rem] font-normal text-black  leading-snug`}>Fitur mood tracker membantu untuk memantau perubahan suasana hati Anda</div>
                             </div>
                         </div>
                     </div>
@@ -76,8 +76,8 @@ const Journaling = () => {
                     <div className={`w-1/3 h-[11rem] bg-white hover:bg-blue-500 hover:cursor-pointer rounded-xl flex-col justify-start items-start inline-flex`} >
                         <div className="flex-col justify-start items-start flex p-3">
                             <div className="justify-start items-start inline-flex">
-                                <div className={`w-10 h-10 bg-neutral-700 hover:bg-white rounded-full flex items-center justify-center`}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={"white"} className="w-6 h-6 hover:stroke-black">
+                                <div className={`w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center`}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={"white"} className="w-6 h-6 ">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
                                     </svg>
 
@@ -85,8 +85,8 @@ const Journaling = () => {
                                 <div className=" relative" />
                             </div>
                             <div className="flex-col justify-start items-start flex mt-2">
-                                <div className={`text-black hover:text-white text-base font-semibold`}>Pop Up Affirmation Words</div>
-                                <div className={`w-full h-16 text-justify text-[.65rem] font-normal text-black hover:text-white leading-snug`}>Fitur pop-up affirmation words memberikan suntikan semangat dan dukungan emosional yang Anda butuhkan</div>
+                                <div className={`text-black  text-base font-semibold`}>Pop Up Affirmation Words</div>
+                                <div className={`w-full h-16 text-justify text-[.65rem] font-normal text-black  leading-snug`}>Fitur pop-up affirmation words memberikan suntikan semangat dan dukungan emosional yang Anda butuhkan</div>
                             </div>
                         </div>
                     </div>

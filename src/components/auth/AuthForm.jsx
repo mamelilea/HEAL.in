@@ -4,55 +4,91 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../ui/Button';
 import Logo from '../../assets/Logo1.png';
 import Carousel from '../ui/Carousel';
+import axios from 'axios';
 
 const AuthForm = () => {
     const navigate = useNavigate();
-    const [frontName, setFrontName] = useState('');
+    const [firstName, setfirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isLogIn, setIsLogIn] = useState(true);
+    const [error, setError] = useState('');
 
     const handleSignUp = async (e) => {
         e.preventDefault();
-        if (validateForm()) {
-
-            fetch("http://localhost:8000/data", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    frontName: frontName,
-                    lastName: lastName,
+        if (!validateForm()) return;
+        try {
+            const response = await axios.post(
+                "https://heal-in-501fb50a416c.herokuapp.com/api/user/register",
+                {
+                    first_name: firstName,
+                    last_name: lastName,
                     email: email,
                     password: password,
-                })
-            }).then((response) => {
-                alert("SignUp successful");
-                setIsLogIn(true);
-            }).catch((error) => {
-                alert("SignUp failed");
-            })
-        }
-    }
+                },
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
 
+            if (response.status === 200) {
+                // Jika pendaftaran berhasil, ambil kode verifikasi dari respons server
+                const verificationCode = response.data;
+
+                // Kirim permintaan verifikasi
+                const verifyResponse = await axios.get(
+                    `https://heal-in-501fb50a416c.herokuapp.com/api/user/email/verify/${verificationCode}`
+                );
+
+                if (verifyResponse.status === 200) {
+                    // Jika verifikasi berhasil, beritahu pengguna dan arahkan ke halaman login
+                    alert("SignUp successful. Please check your email for verification.");
+                    setIsLogIn(true);
+                    navigate('/auth');
+                } else {
+                    throw new Error('Verification failed');
+                }
+            } else {
+                throw new Error('SignUp failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            if (error.response && error.response.status === 409) {
+                alert("Email sudah terdaftar. Silakan gunakan email lain.");
+            } else {
+                alert("SignUp failed. Silakan coba lagi.");
+            }
+        }
+
+    }
     const handleLogin = async (e) => {
         e.preventDefault();
-        if (validateForm()) {
-            try {
-                const res = await fetch(`http://localhost:8000/data`);
-                const data = await res.json();
-                const foundUser = data.find(user => user.email === email && user.password === password);
-                if (foundUser) {
-                    navigate('/');
-                } else {
-                    alert("Please Enter Correct Email and Password");
+        if (!validateForm()) return;
+        try {
+            // Lakukan permintaan POST ke endpoint login
+            const response = await axios.post(
+                "https://heal-in-501fb50a416c.herokuapp.com/api/user/login",
+                {
+                    email: email,
+                    password: password
                 }
-            } catch (error) {
-                alert("Login failed. Please try again later.");
+            );
+
+
+            if (response.status === 200) {
+                const token = response.data.data.token;
+                localStorage.setItem('accessToken', token);
+                console.log('Login successful');
+                navigate('/');
+            } else {
+                alert("Please Enter Correct Email and Password");
             }
+        } catch (error) {
+            alert("Login failed. Please try again later.");
         }
     }
 
@@ -66,7 +102,7 @@ const AuthForm = () => {
                 return false;
             }
         } else {
-            if (frontName === "" || frontName === null) {
+            if (firstName === "" || firstName === null) {
                 alert("Nama depan harus diisi");
                 return false;
             }
@@ -90,21 +126,24 @@ const AuthForm = () => {
                 return false;
             }
         }
+        setError('');
         return true;
     }
 
-    const toggleMode = (e) => {
-        setIsLogIn(e.target.value === 'Log In');
+    const toggleMode = () => {
+        setIsLogIn(!isLogIn);
     };
 
     const handleSignUpLinkClick = () => {
         setIsLogIn(false);
+        setErrorMessage('');
     };
     const handleLoginLinkClick = () => {
         setIsLogIn(true);
+        setErrorMessage('');
     };
 
-    return ( 
+    return (
         <div className='w-[95vw] h-max flex items-center justify-center overflow-x-hidden py-10 px-4 font-plus-jakarta'>
             {/* section kiri */}
             <section className='lg:w-1/2 lg:h-max flex items-center justify-center overflow-hidden'>
@@ -172,10 +211,10 @@ const AuthForm = () => {
                                     </div>
                                     <Input
                                         type="text"
-                                        name="frontName"
+                                        name="firstName"
                                         required={true}
-                                        value={frontName}
-                                        onChange={(e) => setFrontName(e.target.value)}
+                                        value={firstName}
+                                        onChange={(e) => setfirstName(e.target.value)}
                                         placeholder="Front Name"
                                         className={"input input-bordered w-full"}
                                     />

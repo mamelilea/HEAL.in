@@ -17,7 +17,7 @@ const LandingPage = () => {
       <div className='flex flex-col items-center w-[97.9vw] ml-1'>
         <Navbar />
         <Home />
-        <About />
+        <About id="about" />
         <Journaling />
         <Breath />
         <VideoPodcast />
